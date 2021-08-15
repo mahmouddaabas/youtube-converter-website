@@ -1,0 +1,43 @@
+body {
+    background-color: black;
+    color: white;
+    width: 100%;
+    font-size: 23px;
+}
+
+.div-formats {
+    position: absolute;
+    width: 10%;
+    left: 47%;
+    top: 260px;
+}
+
+.div-converter {
+    position: absolute;
+    width: 30%;
+    left: 41%;
+    top: 300px;
+}
+
+.url-input {
+    width: 320px;
+}
+
+.convert-btn {
+    position: absolute;
+    top: 40px;
+    right: 65%;
+}
+
+.div-footer {
+    position: absolute;
+    justify-content: center;
+    bottom: 2%;
+    left: 46%;
+}
+
+.div-footer a {
+    text-decoration: underline;
+    color: inherit;
+}
+
