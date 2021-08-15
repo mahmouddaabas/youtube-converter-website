@@ -6,12 +6,16 @@ const port = process.env.PORT || 3001;
 
 app.use(cors());
 
-app.get('/convert/:url', async (request, response) => {
-    //console.log('Converting video.')
+app.get('/convert/:url/:format', async (request, response) => {
+    console.log('Converting video.')
     const url = request.params.url;
-    //console.log(url)
+    const format = request.params.format;
+    //console.log(url, format)
 
-    let data = await convert.download_video(url);
+    dl_url = 'https://www.youtube.com/watch?' + url
+    //console.log(dl_url)
+
+    let data = await convert.video_information(dl_url, format);
     //console.log(data)
     response.send(data)
 });

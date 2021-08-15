@@ -1,0 +1,31 @@
+{
+  "name": "youtube-converter-website",
+  "version": "1.0.0",
+  "description": "Download youtube videos in MP3 or MP4.",
+  "main": "server.js",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "install": "^0.13.0",
+    "npm": "^7.20.6",
+    "ytdl-core": "^4.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahmouddaabas/youtube-converter-website.git"
+  },
+  "keywords": [
+    "converter",
+    "downloader"
+  ],
+  "author": "Mahmoud Daabas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mahmouddaabas/youtube-converter-website/issues"
+  },
+  "homepage": "https://github.com/mahmouddaabas/youtube-converter-website#readme"
+}
