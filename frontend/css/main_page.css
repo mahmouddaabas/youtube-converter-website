@@ -9,14 +9,14 @@ body {
     position: absolute;
     width: 10%;
     left: 47%;
-    top: 260px;
+    top: 460px;
 }
 
 .div-converter {
     position: absolute;
     width: 30%;
     left: 41%;
-    top: 300px;
+    top: 500px;
 }
 
 .url-input {
@@ -39,5 +39,15 @@ body {
 .div-footer a {
     text-decoration: underline;
     color: inherit;
+}
+
+.div-logo {
+    position: absolute;
+    right: 25%;
+    top: 50px;
+}
+
+.logo {
+    width: 80%;
 }
 
