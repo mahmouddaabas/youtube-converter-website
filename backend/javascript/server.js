@@ -17,6 +17,7 @@ app.get('/convert/:url/:format', async (request, response) => {
 
     let data = await convert.video_information(dl_url, format);
     //console.log(data)
+    response.send("Converting video, please wait...")
     response.send(data)
 });
 
