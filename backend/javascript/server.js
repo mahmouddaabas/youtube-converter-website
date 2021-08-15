@@ -25,9 +25,14 @@ app.get('/convert/:url/:format', async (request, response) => {
 
     response.header("Content-Disposition", 'attachment;\  filename="' + videoname + selected_format)
 
-    ytdl(dl_url ,{format: selected_format})
-
-    .pipe(response)
+    if(selected_format == ".mp3") {
+        ytdl(dl_url, { filter: 'audioonly'})
+        .pipe(response);
+    }
+    else {
+        ytdl(dl_url)
+        .pipe(response);
+    }
     })
 });
 
