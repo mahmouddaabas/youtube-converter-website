@@ -2,7 +2,11 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const port = process.env.PORT || 3001;
+
 const ytdl = require('ytdl-core');
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+const ffmpeg = require('fluent-ffmpeg');
+ffmpeg.setFfmpegPath(ffmpegPath);
 
 
 app.use(cors());
@@ -26,8 +30,15 @@ app.get('/convert/:url/:format', async (request, response) => {
     response.header("Content-Disposition", 'attachment;\  filename="' + videoname + selected_format)
 
     if(selected_format == ".mp3") {
-        ytdl(dl_url, { filter: 'audioonly'})
-        .pipe(response);
+
+        let stream = ytdl(dl_url, { //make stream reference the ytdl function
+            quality: 'highestaudio',
+          });
+
+        ffmpeg(stream) //load the downloaded file into ffmpeg
+        .noVideo() //remove video
+        .format("mp3") //assign format
+        .pipe(response, {end: true}); //pipe the response then end the output stream
     }
     else {
         ytdl(dl_url)
