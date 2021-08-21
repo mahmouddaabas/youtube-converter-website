@@ -6,7 +6,7 @@ import youtube_dl
 import os
 import io
 
-@app.route("/")
+@app.route("/download")
 def download():
     #Args that are sent with the query
     url = request.args.get('url')
