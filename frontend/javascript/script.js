@@ -23,7 +23,6 @@ $(document).ready(() => {
         if(format != undefined) { //check if a format has been selected
                 fetch('https://youtube-converter-web-py.herokuapp.com/download?url=' + $(".url-input").val() + "&format=" + format + "&quality=" + quality)
                 .then(response => {
-                    alert(response.url)
                     var url = response.url; //get the url from the response
                     var a = document.createElement("a") //create an a element
                     a.href = url; //set the url to the a documents href
