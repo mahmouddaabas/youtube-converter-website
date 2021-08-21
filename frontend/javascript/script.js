@@ -1,6 +1,7 @@
 $(document).ready(() => {
 
     var format;
+    var quality;
 
     $(".mp3").on("click", () => {
         $(".mp3").css('background-color','green');
@@ -14,10 +15,14 @@ $(document).ready(() => {
         format = ".mp4"
     })
 
+    $(".quality-select-box").change(() => {
+        quality = $(".quality-select-box").val();
+    })
+
     $(".convert-btn").on("click", () => {
         if(format != undefined) { //check if a format has been selected
             split_url($(".url-input").val()).then(url_response => {
-                fetch('https://youtube-downloader-web.herokuapp.com/convert/' + url_response + "/" + format)
+                fetch('127.0.0.1/3001/convert/' + url_response + "/" + format + "/" + quality)
                 .then(response => {
                     var url = response.url; //get the url from the response
                     var a = document.createElement("a") //create an a element
