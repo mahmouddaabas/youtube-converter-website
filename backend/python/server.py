@@ -6,6 +6,11 @@ import youtube_dl
 import os
 import io
 
+@app.route("/")
+def welcome():
+    return "Contact the creator for documentation on how to use this."+ "<br>Discord: mahe#0996"
+
+
 @app.route("/download")
 def download():
     #Args that are sent with the query
