@@ -6,10 +6,9 @@ import youtube_dl
 import os
 import io
 
-#Create app and allow CORS
+#Create app
 def create_app():
     app = Flask(__name__)
-    CORS(app)
 
     @app.route("/")
     def welcome():
@@ -17,6 +16,7 @@ def create_app():
 
 
     @app.route("/download")
+    @cross_origin()
     def download():
         #Args that are sent with the query
         url = request.args.get('url')
