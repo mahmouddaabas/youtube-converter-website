@@ -50,7 +50,7 @@ def download():
 
         #Declare options for the download
         ydl_opts = {
-            'outtmpl': video_title + ".mp3",
+            'outtmpl': title + ".mp3",
             'format': 'bestaudio/best',
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
@@ -64,7 +64,7 @@ def download():
             ydl.download([url])
 
         #Declare path to downloaded MP3 file
-        path = video_title.replace("|", "#") + ".mp3"
+        path = title + ".mp3"
 
         #Create a place to store the file in the memory
         return_data = io.BytesIO()
