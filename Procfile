@@ -1,1 +1,1 @@
-web: node backend/javascript/server.js
+web: python backend/python/server.py

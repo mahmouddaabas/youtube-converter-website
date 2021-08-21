@@ -37,6 +37,9 @@ def download():
         info_dict = ydlinfo.extract_info(url, download=False)
         video_title = info_dict.get("title", None)
 
+        #Clean video title for MP3 to prevent it from creating a folder for the downloaded file
+        video_title = video_title.replace("/", "-")
+
         #Declare options for the download
         ydl_opts = {
             'outtmpl': video_title + ".mp3",
@@ -67,7 +70,7 @@ def download():
         os.remove(path)
 
         #Send the file
-        return send_file(return_data, as_attachment=True, attachment_filename=title + ".mp3")
+        return send_file(return_data, as_attachment=True, attachment_filename=video_title + ".mp3")
 
     else:
         #Download the file with pytube
