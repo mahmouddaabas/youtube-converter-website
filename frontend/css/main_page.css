@@ -1,53 +1,50 @@
 body {
     background-color: #1b1a20;
     color: white;
-    width: 100%;
     font-size: 23px;
+    display: block;
+}
+
+.div-logo {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.logo {
+    width: 35%;
 }
 
 .div-formats {
-    position: absolute;
-    width: 15%;
-    left: 44%;
-    top: 460px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .div-converter {
-    position: absolute;
-    width: 30%;
-    left: 41%;
-    top: 500px;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 4px;
 }
 
-.url-input {
-    width: 320px;
+.url-input{
+    width: 300px;
 }
 
 .convert-btn {
-    position: absolute;
-    top: 40px;
-    right: 65%;
+    margin-top: 10px;
 }
 
 .div-footer {
-    position: absolute;
-    justify-content: center;
-    bottom: 2%;
-    left: 46%;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .div-footer a {
     text-decoration: underline;
     color: inherit;
-}
-
-.div-logo {
-    position: absolute;
-    right: 25%;
-    top: 50px;
-}
-
-.logo {
-    width: 80%;
 }
 
