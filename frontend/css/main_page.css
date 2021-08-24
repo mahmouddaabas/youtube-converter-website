@@ -34,6 +34,11 @@ body {
     margin-top: 10px;
 }
 
+.status {
+    position: relative;
+    top: 15px;
+}
+
 .div-footer {
     position: fixed;
     bottom: 0;

@@ -19,8 +19,11 @@ $(document).ready(() => {
         quality = $(".quality-select-box").val();
     })
 
-    $(".convert-btn").on("click", () => {
-        if(format != undefined) { //check if a format has been selected
+    $(".convert-btn").on("click", () => 
+    {
+        if(format != undefined && $(".url-input").val().indexOf("youtube") >= 0) { //check if a format has been selected and if its a youtube url
+                $(".status").css('color','white');
+                $(".status").text("Converting your video, please wait...")
                 fetch('https://youtube-converter-web-py.herokuapp.com/download?url=' + $(".url-input").val() + "&format=" + format + "&quality=" + quality)
                 .then(response => {
                     var url = response.url; //get the url from the response
@@ -28,10 +31,14 @@ $(document).ready(() => {
                     a.href = url; //set the url to the a documents href
                     a.click(); //click on the a document to trigger a browser download
                     a.remove(); //remove the a element once its done
+                    $(".status").css('color','green');
+                    $(".status").text("Sucessfully converted, download will begin shortly.")
             })
         }
         else {
-            alert("Select a format!")
+            alert("Insert a valid youtube url and select a format!")
+            $(".status").css('color','red');
+            $(".status").text("There was an error which caused the conversion to fail.")
         }
     })
 
